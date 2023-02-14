@@ -1,0 +1,48 @@
+name: Imprime data atual
+
+on:
+  push:
+
+jobs:
+  ex1_imprime_data_ubuntu:
+    name: Imprime data atual - Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - name: Imprime data atual usando o sistema operacional Ubuntu
+        run: date
+        
+  ex2_imprime_data_windows:
+    name: Imprime data atual - Windows
+    runs-on: windows-latest
+    steps:
+      - name: Imprime data atual usando o sistema operacional Windows
+        run: date
+    
+  ex3_imprime_data_macos:
+    name: Imprime data atual - MacOS
+    runs-on: macos-latest
+    steps:
+      - name: Imprime data atual usando o sistema operacional MacOS
+        run: date
+        
+  ex4_imprime_data:
+    name: Imprime data atual - final
+    runs-on: ubuntu-latest
+    needs:
+          - ex1_imprime_data_ubuntu
+          - ex2_imprime_data_windows
+          - ex3_imprime_data_macos
+    steps:
+      - name: Imprime data atual usando o sistema operacional Ubuntu
+        run: date
+       
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
