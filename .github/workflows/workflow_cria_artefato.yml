@@ -1,0 +1,27 @@
+name: Worflow que cria um artefato
+
+on:
+  push
+
+env:
+  VARIAVEL_1: Fernando Alonso
+  VARIAVEL_2: Aston Martin Aramco Cognizant F1 Team
+  
+jobs:
+  checkout_code:
+    name: Faz checkout do código
+    runs-on: ubuntu-test
+    env:
+      VARIAVEL_JOB: 14
+    
+    steps:
+    - name: Checkout repositório
+      uses: actions/checkout@v3.3.0
+      
+    - name: Upload a build artifact
+      uses: actions/upload-build-artifact@v3.1.2
+      with:
+        name: ${{ vars.DRIVER }}
+        path: .
+    
+    
